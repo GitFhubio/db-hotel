@@ -17,13 +17,13 @@ if ($conn && $conn->connect_error) {
 +
 // prepare and bind
 
-$stmt = $conn->prepare("INSERT INTO tb_products (id,
-idUser, price) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $id, $idUser, $price);
+$stmt = $conn->prepare("INSERT INTO atleti (ID,
+nome, cognome) VALUES (?, ?, ?)");
+$stmt->bind_param("dss", $id, $nome, $cognome);
 
 // questi magari mi arrivano da un form
 
-$id = 4;
-$idUser = 4;
-$price = 30.30;
+$id = 3;
+$nome = "Pippo";
+$cognome = "Baudo";
 $stmt->execute();
