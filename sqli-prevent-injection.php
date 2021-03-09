@@ -14,7 +14,6 @@ if ($conn && $conn->connect_error) {
 } else {
   echo "Connection done. <br/>";
 }
-+
 // prepare and bind
 
 $stmt = $conn->prepare("INSERT INTO atleti (nome, cognome) VALUES (?, ?)");
