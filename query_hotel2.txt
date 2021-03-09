@@ -103,6 +103,13 @@ INNER JOIN `paganti`
 ON pagamenti.pagante_id = paganti.id
 WHERE prenotazioni.id = 7;
 
+SELECT paganti.name AS 'nome pagante', paganti.lastname AS 'cognome pagante', paganti.address AS 'indirizzo fatturazione', pagamenti.price AS 'importo', paganti.created_at AS 'data pagamento'
+FROM `pagamenti`
+INNER JOIN `paganti`
+ON pagamenti.pagante_id = paganti.id
+WHERE prenotazione_id = 7;
+
+
 ●    Le stanze sono state tutte prenotate almeno una volta? (Visualizzare le stanze non ancora prenotate)
 
 SELECT COUNT(*),stanze.id FROM prenotazioni INNER JOIN stanze ON prenotazioni.`stanza_id`=stanze.id GROUP BY stanze.id;
