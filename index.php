@@ -15,11 +15,10 @@ if ($conn && $conn->connect_error) {
   echo "Connection done. <br/>";
 }
 
+$min =1;
+$max= 3;
 
-$numeroStanza = 101;
-
-
-$sql = "SELECT room_number, floor FROM stanze WHERE room_number = $numeroStanza";
+$sql = "SELECT room_number, floor FROM stanze WHERE floor BETWEEN $min AND $max";
 $result = $conn->query($sql);
 
 if ($result && $result->num_rows > 0) {
