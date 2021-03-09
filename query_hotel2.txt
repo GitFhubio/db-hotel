@@ -95,7 +95,13 @@ SELECT SUM(price) FROM pagamenti INNER JOIN prenotazioni ON pagamenti.`prenotazi
 
 ●    Prendi i dati di fatturazione per la prenotazione con id=7
 
-SELECT paganti.name,paganti.lastname,paganti.address,ospiti.`date_of_birth`,`ospiti`.`document_type`,ospiti.`document_number` from pagamenti INNER JOIN paganti ON pagamenti.`pagante_id` = paganti.id INNER JOIN ospiti ON paganti.`ospite_id` = ospiti.id WHERE prenotazione_id = 7 ;
+SELECT paganti.name AS 'nome pagante', paganti.lastname AS 'cognome pagante', paganti.address AS 'indirizzo fatturazione', pagamenti.price AS 'importo', paganti.created_at AS 'data pagamento'
+FROM `prenotazioni`
+INNER JOIN `pagamenti`
+ON prenotazioni.id = pagamenti.prenotazione_id
+INNER JOIN `paganti`
+ON pagamenti.pagante_id = paganti.id
+WHERE prenotazioni.id = 7;
 
 ●    Le stanze sono state tutte prenotate almeno una volta? (Visualizzare le stanze non ancora prenotate)
 
