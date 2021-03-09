@@ -37,10 +37,10 @@ $PDOconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
  //per visualizzare record nella pagina
 
  $st=$PDOconn->query("SELECT * FROM atleti");
-// while($record=$st->fetch()){
-//
-//   echo "Nome : ". $record['nome'].". Cognome:" .$record['cognome']."<br>";
-// }
+while($record=$st->fetch()){
+
+  echo "Nome : ". $record['nome'].". Cognome:" .$record['cognome']."<br>";
+}
 
 
 //oppure possiamo fare al posto del while
