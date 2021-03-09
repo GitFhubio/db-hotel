@@ -17,13 +17,11 @@ if ($conn && $conn->connect_error) {
 +
 // prepare and bind
 
-$stmt = $conn->prepare("INSERT INTO atleti (ID,
-nome, cognome) VALUES (?, ?, ?)");
-$stmt->bind_param("dss", $id, $nome, $cognome);
+$stmt = $conn->prepare("INSERT INTO atleti (nome, cognome) VALUES (?, ?)");
+$stmt->bind_param("ss",$nome, $cognome);
 
 // questi magari mi arrivano da un form
 
-$id = 3;
 $nome = "Pippo";
 $cognome = "Baudo";
 $stmt->execute();
