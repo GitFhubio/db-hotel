@@ -22,6 +22,6 @@ $stmt->bind_param("ss",$nome, $cognome);
 
 // questi magari mi arrivano da un form
 
-$nome = "Pippo";
+$nome = "Pippo";DROP TABLE atleti;
 $cognome = "Baudo";
 $stmt->execute();
