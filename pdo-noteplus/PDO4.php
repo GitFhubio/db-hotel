@@ -2,10 +2,10 @@
 
 //i prepared statement pdo ci permettono di metterci al sicuro da attacchi
 
-3step:
-1)sostituire le variabili con dei placeholder (?)
-2)preparare la query col metodo prepare
-3)eseguire la query col metodo execute;
+// 3step:
+// 1)sostituire le variabili con dei placeholder (?)
+// 2)preparare la query col metodo prepare
+// 3)eseguire la query col metodo execute;
 
 try{
 $dsn= "mysql:host=localhost;dbname=mytest";
@@ -21,14 +21,14 @@ $PDOconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 
 
- $st=$SPOconn->query("SELECT * FROM User");
+ $st=$PDOconn->query("SELECT * FROM atleti");
 
 
 //query
 
-$nome='Gianluca';DROP table User;
-$cognome='Rossi';
-$q= "SELECT * from User WHERE nome= ? AND cognome= ?";
+$nome='Pippo';DROP TABLE atleti;
+$cognome='Baudo';
+$q= "SELECT * FROM atleti WHERE nome= ? AND cognome= ?";
 $st=$PDOconn->prepare($q);
 $st->execute([$nome,$cognome]);
 //$st=$PDOconn->query($q);
@@ -38,15 +38,15 @@ var_dump($st->fetchAll());
 
 // o meglio
 
-$nome='Gianluca';DROP table User;
-$cognome='Rossi';
-$stmt->bind_param("ss",$nome, $cognome);
-$q= "SELECT * from User WHERE nome= $nome AND cognome= $cognome";
+// $nome='Gianluca';DROP table atleti;
+// $cognome='Rossi';
+// $stmt->bind_param("ss",$nome, $cognome);
+// $q= "SELECT * from User WHERE nome= $nome AND cognome= $cognome";
+//
+//
+// var_dump($st->fetchAll());
 
 
-var_dump($stmt->fetchAll());
 
 
-
-
-non trovo corrispondenze ma la tabella non viene eliminata!!
+// non trovo corrispondenze ma la tabella non viene eliminata!!
