@@ -34,19 +34,4 @@ $st->execute([$nome,$cognome]);
 //$st=$PDOconn->query($q);
 var_dump($st->fetchAll());
 
-
-
-// o meglio
-
-// $nome='Gianluca';DROP table atleti;
-// $cognome='Rossi';
-// $stmt->bind_param("ss",$nome, $cognome);
-// $q= "SELECT * from User WHERE nome= $nome AND cognome= $cognome";
-//
-//
-// var_dump($st->fetchAll());
-
-
-
-
 // non trovo corrispondenze ma la tabella non viene eliminata!!
