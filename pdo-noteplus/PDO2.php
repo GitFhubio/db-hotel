@@ -27,7 +27,7 @@ echo "Record correttamente inserito";
 try{
 
   // LA QUERY ritorna un oggetto di tipo statement $st
-$st= $PDOconn->query("INSERT INTO User (nome,username,anni) VALUES ('Luisa','troia','40')");
+$st= $PDOconn->query("INSERT INTO User (nome,username,anni) VALUES ('Luisa','lollo','40')");
 }catch(PDOException $e){
 echo $e->getMessage()";
 }

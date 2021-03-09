@@ -3,7 +3,7 @@
 //l'approccio è object oriented
 
 try{
-$dsn= "mysql:host=127.0.0.1;dbname=mytest";
+$dsn= "mysql:host=localhost;dbname=mytest";
 //$PDOconn= new PDO($dsn, $username, $password);
 
 $PDOconn= new PDO($dsn, "root", "root");
@@ -18,8 +18,4 @@ $PDOconn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //inserire record tramite pdo
 //PASSIAMO ISTRUZIONE SQL
 
-$st= $PDOconn->query("INSERT INTO User (nome,cognome) VALUES ('Luisa','Rinaldi')");
-
-
-
-}
+$st= $PDOconn->query("INSERT INTO atleti (nome,cognome) VALUES ('Luisa','Rinaldi')");
